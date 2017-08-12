@@ -31,6 +31,7 @@ import cz.dinohd.bs.eventy.Announcments;
 import cz.dinohd.bs.eventy.AntiBugger;
 import cz.dinohd.bs.eventy.ChatBlock;
 import cz.dinohd.bs.eventy.CreativeControl;
+import cz.dinohd.bs.eventy.EasterEggs;
 import cz.dinohd.bs.eventy.FireworkSpawnEvent;
 import cz.dinohd.bs.eventy.IceBoatSpawn;
 import cz.dinohd.bs.eventy.JoinListener;
@@ -228,5 +229,6 @@ public void onEnable() {
 	    getServer().getPluginManager().registerEvents(new ActivateJumpingEffect(), this);
 	    getServer().getPluginManager().registerEvents(new CreativeControl(), this);
 	    getServer().getPluginManager().registerEvents(new AFK(), this);
+	    getServer().getPluginManager().registerEvents(new EasterEggs(), this);
    }
 }
