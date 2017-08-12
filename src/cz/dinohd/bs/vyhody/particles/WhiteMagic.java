@@ -20,8 +20,10 @@ public class WhiteMagic {
                 @Override
                 public void run() {
                     if (e.containsKey(p.getName()) && p.isOnline()) {
-                        ParticleEffect.SPELL_MOB.display(0.7f, 0.7f, 0.7f, 0.05f, 20, p.getLocation(), ((Main) Main.getInstance()).getPlayers());
+                    	for (Player online : Bukkit.getOnlinePlayers()) {
+                        ParticleEffect.SPELL_MOB.display(0.7f, 0.7f, 0.7f, 0.05f, 20, p.getLocation(), online);
                     }
+                }
                 }
             }, 0L, 5L).getTaskId();
             e.put(p.getName(), Integer.valueOf(task));

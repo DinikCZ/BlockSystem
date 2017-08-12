@@ -20,7 +20,9 @@ public class WitchMagic {
                 @Override
                 public void run() {
                     if (e.containsKey(p.getName()) && p.isOnline()) {
-                        ParticleEffect.SPELL_WITCH.display(0.7f, 0.7f, 0.7f, 0.05f, 8, p.getLocation(), ((Main) Main.getInstance()).getPlayers());
+                    	for (Player online : Bukkit.getOnlinePlayers()) {
+                        ParticleEffect.SPELL_WITCH.display(0.7f, 0.7f, 0.7f, 0.05f, 8, p.getLocation(), online);
+                    	}
                     }
                 }
             }, 0L, 5L).getTaskId();

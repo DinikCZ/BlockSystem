@@ -20,7 +20,9 @@ public class Portal {
                 @Override
                 public void run() {
                     if (e.containsKey(p.getName()) && p.isOnline()) {
-                        ParticleEffect.PORTAL.display(0.7f, 0.7f, 0.7f, 0.05f, 5, p.getLocation(), ((Main) Main.getInstance()).getPlayers());
+                    	for (Player online : Bukkit.getOnlinePlayers()) {
+                        ParticleEffect.PORTAL.display(0.7f, 0.7f, 0.7f, 0.05f, 5, p.getLocation(), online);
+                    }
                     }
                 }
             }, 0L, 5L).getTaskId();

@@ -28,11 +28,11 @@ public class AFK implements Listener, CommandExecutor {
 	            message.append(" ");
 	            message.append(args[i]);
 	          }
-      if (args.length <= 0) {
-            Bukkit.broadcastMessage("§8[§e§lAFK§8] §cHráè §6§l" + p.getName() + " §eje nyní AFK!");
-            Main.getInstance().AFKAdd(p.getName());
-      }
+      if (args.length > 0) {
       Bukkit.broadcastMessage("§8[§e§lAFK§8] §eHráè §6§l" + p.getName() + " §eje nyní AFK! §7(§e" + message + "§7)");
+      Main.getInstance().AFKAdd(p.getName());
+      }
+      Bukkit.broadcastMessage("§8[§e§lAFK§8] §cHráè §6§l" + p.getName() + " §eje nyní AFK!");
       Main.getInstance().AFKAdd(p.getName());
 {
 		return true;

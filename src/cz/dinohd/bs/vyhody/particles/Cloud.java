@@ -20,8 +20,10 @@ public class Cloud {
                 @Override
                 public void run() {
                     if (e.containsKey(p.getName()) && p.isOnline()) {
-                        ParticleEffect.CLOUD.display(1.0f, 1.0f, 1.0f, 0.05f, 15, p.getLocation(), ((Main) Main.getInstance()).getPlayers());
+                    	for (Player online : Bukkit.getOnlinePlayers()) {
+                        ParticleEffect.CLOUD.display(1.0f, 1.0f, 1.0f, 0.05f, 15, p.getLocation(), online);
                     }
+                }
                 }
             }, 0L, 5L).getTaskId();
             e.put(p.getName(), Integer.valueOf(task));
