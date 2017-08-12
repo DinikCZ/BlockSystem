@@ -30,3 +30,5 @@ commands:
   spawnboat:
   activatejumpingeffectcommand:
   afk:
+     description: AFK Příkaz <3
+     aliases: [awayfromkeyboard, chcipryc]

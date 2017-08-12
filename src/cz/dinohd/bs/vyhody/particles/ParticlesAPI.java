@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -269,6 +270,14 @@ public class ParticlesAPI implements Listener {
     }
 
     @EventHandler
+    private void onDrop(PlayerDropItemEvent e) {
+        final Player p =  e.getPlayer();
+        if (p.getInventory().getTitle().equals("§0        §9§lParticles")) {
+            e.setCancelled(true);
+        }
+    }
+    
+    @EventHandler
     private void onInteract(InventoryClickEvent e) {
         final Player p = (Player) e.getWhoClicked();
         if (e.getInventory().getTitle().equals("§0        §9§lParticles")) {
@@ -442,7 +451,6 @@ public class ParticlesAPI implements Listener {
                     p.closeInventory();
                 }
             }
-        }
         if (e.getSlot() == 30) {
             if (p.hasPermission("system.particles.helix")) {
                 deactivateParticles(p);
@@ -453,6 +461,7 @@ public class ParticlesAPI implements Listener {
                 p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                 p.closeInventory();
             }
+        }
         }
     }
 

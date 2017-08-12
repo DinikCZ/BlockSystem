@@ -189,7 +189,7 @@ public void onEnable() {
             "",
             "",
             "§b§lSystem §8§l» §eBlockSystem byl naèten!",
-            "§b§lSystem §8§l» §eHello world",
+            "§b§lSystem §8§l» §eStill alive",
             "",
             "",
             "§7§m+-------------------------------------+"
