@@ -1,0 +1,32 @@
+name: BlockSystem
+version: 1.2
+author: iTzDinikCZ
+main: cz.dinohd.bs.Main
+description: System pro server BlockMania!
+depend: [Vault]
+permissions:
+  system.guest:
+    default: true
+    description: Zatim zadne vyuziti
+  system.announce:
+    default: false
+  system.admin:
+    default: false
+  system.anvil:
+    default: false
+commands:
+  announce:
+  cc:
+  softrestart:
+  inv:
+  inzerat:
+  bsreload:
+  particles:
+  chatcolor:
+  softcontroller:
+  bsdownload:
+  bsregenerate:
+  ac:
+  spawnboat:
+  activatejumpingeffectcommand:
+  afk:

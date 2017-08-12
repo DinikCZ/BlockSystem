@@ -1,0 +1,56 @@
+###################################
+#                                 #
+#         < BlockSystem >         #
+#              v1.2               #
+#        < By iTzDinikCZ >        #
+#                                 #
+###################################
+
+#Upravuj pouze, když víš co děláš
+errorcolor: 'c'
+successcolor: 'a'
+warningcolor: 'e'
+
+#Seznam uživatelů na Block Listu
+#Pokud odebereš "#" tak se tyto nicky přidají do Blocku př. # - '_HenTgen_' = Odebráním toho "#" bude daný uživatel přidán do blocku
+chatbloknuti:
+  - 'semzadatnick'
+  - 'druhynick'
+  - 'tretinick'
+  - 'adalsi'
+  #Tento týpek je tam z důvodu reklamy a spam nadávání
+  - 'TioOfficial' 
+#  - '_HenTgen_'
+#  - 'TheHooper'
+#  - 'Gejmrovec'
+#  - 'GEJMR'
+#  - 'Newia'
+#  - 'MenT98'
+  
+#Prefix pro Message
+#Color code > §
+#Již brzy se bude moci používat &
+prefix: '§b§lSystem §8§l» '
+clearchatprefix: '§3§lClear Chat §8§l» '
+acprefix: '§d§lAdminChat §8§l»'
+
+#AdminChat Formát
+#Color code > §
+#Placeholdery:
+#AdminChat Prefix > {PREFIX} | Hráč > {HRAC}
+acformat: '{PREFIX} {HRAC} §8§l» §f'
+#Nastavení zprávy, která se objeví hráči, který má bloknutý chat, když je na seznamu chatbloknuti
+#Pro barvy používej &
+msgblock: 'Byl jsi zablokován Systémem Serveru!'
+
+#Nastavení ClearChat Zprávy (/cc, /clearchat)
+#Lze použít Color Cody (&)
+#Placeholder %ADMIN% - Odešle jméno administrátora, který smazal chat.
+msgclear: 'Chat byl vymazán administrátorem %ADMIN%!'
+
+#Nastavení Soft-Restart Zprávy (/softrestart)
+#Lze použít Color Cody (&)
+srmsg: 'Server bude restartován, když bude na serveru 0 hráčů!'
+
+#Server, ze kterého se zbírají statistiky
+server: null
