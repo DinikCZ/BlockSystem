@@ -32,6 +32,7 @@ public class ParticlesAPI implements Listener {
     Happy ha = new Happy();
     Snowball sn = new Snowball();
     Void vo = new Void();
+    Helix helix = new Helix();
     private static int rows;
 
     public void openParticlesMenu(final Player p) {
@@ -48,7 +49,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(10, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cHearts", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cHearts", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(10, i);
         }
         if (p.hasPermission("system.particles.angry")) {
@@ -61,7 +62,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(11, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cAngry", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cAngry", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(11, i);
         }
         if (p.hasPermission("system.particles.whitemagic")) {
@@ -74,7 +75,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(12, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cWhite Magic", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cWhite Magic", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(12, i);
         }
         if (p.hasPermission("system.particles.witchmagic")) {
@@ -87,7 +88,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(13, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cWitch Magic", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cWitch Magic", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(13, i);
         }
         if (p.hasPermission("system.particles.slime")) {
@@ -100,7 +101,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(14, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cSlime", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cSlime", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(14, i);
         }
         if (p.hasPermission("system.particles.snowball")) {
@@ -113,7 +114,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(15, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cSnow", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cSnow", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(15, i);
         }
         if (p.hasPermission("system.particles.flame")) {
@@ -126,7 +127,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(16, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cFlame", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cFlame", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(16, i);
         }
         if (p.hasPermission("system.particles.redstone")) {
@@ -139,7 +140,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(19, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cRedstone", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cRedstone", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(19, i);
         }
         if (p.hasPermission("system.particles.cloud")) {
@@ -152,7 +153,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(20, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cCloud", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cCloud", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(20, i);
         }
         if (p.hasPermission("system.particles.enchanted")) {
@@ -165,7 +166,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(21, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cEnchanted", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cEnchanted", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(21, i);
         }
         if (p.hasPermission("system.particles.firework")) {
@@ -178,7 +179,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(22, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cFirework", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cFirework", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(22, i);
         }
         if (p.hasPermission("system.particles.portal")) {
@@ -191,7 +192,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(23, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cPortal", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cPortal", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(23, i);
         }
         if (p.hasPermission("system.particles.lava")) {
@@ -204,7 +205,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(28, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cLava", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cLava", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(28, i);
         }
         if (p.hasPermission("system.particles.smoke")) {
@@ -217,7 +218,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(29, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cSmoke", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cSmoke", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(29, i);
         }
         if (p.hasPermission("system.particles.happy")) {
@@ -230,7 +231,7 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(25, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cHappy", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cHappy", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(25, i);
         }
         if (p.hasPermission("system.particles.void")) {
@@ -243,8 +244,21 @@ public class ParticlesAPI implements Listener {
                 inv.setItem(24, i);
             }
         } else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cVoid", "", "§7Tento efekt je dostupný pro §b§lDiamondVIP §7a §6§lvyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cVoid", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
             inv.setItem(24, i);
+        }
+        if (p.hasPermission("system.particles.helix")) {
+            if (Void.e.containsKey(p.getName())) {
+                ItemStack i = ItemFactory.create(Material.REDSTONE_BLOCK, (byte) 0, "§c§lHelix", "§7Kliknutím deaktivuješ!");
+                i = ItemFactory.addGlow(i);
+                inv.setItem(30, i);
+            } else {
+                ItemStack i = ItemFactory.create(Material.REDSTONE_BLOCK, (byte) 0, "§c§lHelix", "§7Kliknutím aktivuješ!");
+                inv.setItem(30, i);
+            }
+        } else {
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cHelix", "", "§7Tento efekt je dostupný pro §b§lHero §7a §6§lvyšší");
+            inv.setItem(30, i);
         }
 
         ItemStack deaktivace = ItemFactory.create(Material.BARRIER, (byte) 0, "§cDeaktivovat", "§7Kliknutim deaktivujes particles.");
@@ -274,7 +288,7 @@ public class ParticlesAPI implements Listener {
                     this.h.activateLove(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -284,7 +298,7 @@ public class ParticlesAPI implements Listener {
                     this.a.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -294,7 +308,7 @@ public class ParticlesAPI implements Listener {
                     this.w.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -304,7 +318,7 @@ public class ParticlesAPI implements Listener {
                     this.m.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -314,7 +328,7 @@ public class ParticlesAPI implements Listener {
                     this.s.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -324,7 +338,7 @@ public class ParticlesAPI implements Listener {
                     this.sn.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -334,7 +348,7 @@ public class ParticlesAPI implements Listener {
                     f.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -344,7 +358,7 @@ public class ParticlesAPI implements Listener {
                     this.r.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -354,7 +368,7 @@ public class ParticlesAPI implements Listener {
                     this.l.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -364,7 +378,7 @@ public class ParticlesAPI implements Listener {
                     this.e.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -374,7 +388,7 @@ public class ParticlesAPI implements Listener {
                     this.k.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -384,7 +398,7 @@ public class ParticlesAPI implements Listener {
                     this.p.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -394,7 +408,7 @@ public class ParticlesAPI implements Listener {
                     this.la.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -404,7 +418,7 @@ public class ParticlesAPI implements Listener {
                     this.sm.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -414,7 +428,7 @@ public class ParticlesAPI implements Listener {
                     this.ha.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
@@ -424,13 +438,24 @@ public class ParticlesAPI implements Listener {
                     this.vo.activate(p);
                     p.closeInventory();
                 } else {
-                    p.sendMessage("§cTento efekt je dostupný pro §b§lDiamondVIP §ca §6§lvyšší");
+                    p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
                     p.closeInventory();
                 }
             }
         }
-
+        if (e.getSlot() == 30) {
+            if (p.hasPermission("system.particles.helix")) {
+                deactivateParticles(p);
+                this.helix.activate(p);
+                p.closeInventory();
+                p.sendMessage("§cTento Particle je v Betì a je více pravdìpodobné, že nebude fungovat.");
+            } else {
+                p.sendMessage("§cTento efekt je dostupný pro §b§lHero §ca §6§lvyšší");
+                p.closeInventory();
+            }
+        }
     }
+
 
     public void deactivateParticles(Player p) {
         if (Hearts.e.containsKey(p.getName())) {
@@ -511,6 +536,11 @@ public class ParticlesAPI implements Listener {
         if (Void.e.containsKey(p.getName())) {
             Bukkit.getScheduler().cancelTask(((Integer) Void.e.get(p.getName())).intValue());
             Void.e.remove(p.getName());
+            p.closeInventory();
+        }
+        if (Helix.e.containsKey(p.getName())) {
+            Bukkit.getScheduler().cancelTask(((Integer) Helix.e.get(p.getName())).intValue());
+            Helix.e.remove(p.getName());
             p.closeInventory();
         }
     }
