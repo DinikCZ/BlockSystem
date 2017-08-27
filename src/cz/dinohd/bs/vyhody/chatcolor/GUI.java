@@ -43,7 +43,7 @@ public class GUI implements Listener
                 inv.setItem(10, i);
             }
         else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cRed", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§cRed", "", "§7Toto je dostupné pouze pro VIP a vyšší");
             inv.setItem(10, i);
         }
         if (p.hasPermission("color.purple")) {
@@ -52,7 +52,7 @@ public class GUI implements Listener
                 inv.setItem(11, i);
         }
             else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§5Purple", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§5Purple", "", "§7Toto je dostupné pouze pro VIP a vyšší");
             inv.setItem(11, i);
         }
         if (p.hasPermission("color.white")) {
@@ -61,16 +61,16 @@ public class GUI implements Listener
                 inv.setItem(12, i);
         } 
             else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§fReset / White", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§fReset / White", "", "§7Toto je dostupné pouze pro VIP a vyšší");
             inv.setItem(12, i);
         }
-        if (p.hasPermission("color.yellow")) {
-                ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 11, "§eYellow", "§7Kliknutím aktvuješ!");
+        if (p.hasPermission("staffcolor.yellow")) {
+                ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 11, "§eYellow", "§7Kliknutím aktivuješ!");
                 i = ItemFactory.addGlow(i);
                 inv.setItem(13, i);
         }
             else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§eYellow", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§eYellow", "", "§7Toto je dostupné pouze pro AdminTeam");
             inv.setItem(13, i);
         }
         if (p.hasPermission("color.green")) {
@@ -79,7 +79,7 @@ public class GUI implements Listener
                 inv.setItem(14, i);
         } 
             else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§aGreen", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§aGreen", "", "§7Toto je dostupné pouze pro VIP a vyšší");
             inv.setItem(14, i);
         }
         if (p.hasPermission("color.blue")) {
@@ -88,16 +88,16 @@ public class GUI implements Listener
                 inv.setItem(15, i);
         } 
             else {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 9, "§bBlue", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§bBlue", "", "§7Toto je dostupné pouze pro VIP a vyšší");
             inv.setItem(15, i);
         }
         if (p.hasPermission("color.pink")) {
-            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 12, "§dPink", "§7Kliknutím aktivuješ!");
+            ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 9, "§dPink", "§7Kliknutím aktivuješ!");
             i = ItemFactory.addGlow(i);
             inv.setItem(16, i);
     } 
         else {
-        ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§dPink", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+        ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§dPink", "", "§7Toto je dostupné pouze pro VIP a vyšší");
         inv.setItem(16, i);
     }
         if (p.hasPermission("color.gold")) {
@@ -106,7 +106,7 @@ public class GUI implements Listener
             inv.setItem(19, i);
     } 
         else {
-        ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§6Gold", "", "§7Toto je dostupné pouze pro IronVIP a vyšší");
+        ItemStack i = ItemFactory.create(Material.INK_SACK, (byte) 8, "§6Gold", "", "§7Toto je dostupné pouze pro VIP a vyšší");
         inv.setItem(19, i);
     }
         if (Main.chatcolorconfig.contains(p.getUniqueId().toString())) {
@@ -137,7 +137,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&c");
                     p.sendMessage("§cVybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }
@@ -147,7 +147,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&5");
                     p.sendMessage("§5Vybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }
@@ -157,7 +157,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&f");
                     p.sendMessage("§fVybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }
@@ -167,7 +167,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&e");
                     p.sendMessage("§eVybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro AdminTeam");
                     p.closeInventory();
                 }
             }
@@ -177,7 +177,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&a");
                     p.sendMessage("§aVybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }
@@ -187,7 +187,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&b");
                     p.sendMessage("§bVybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }
@@ -197,7 +197,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&d");
                     p.sendMessage("§dVybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }
@@ -207,7 +207,7 @@ public class GUI implements Listener
                     Config.setColor(p, "&6");
                     p.sendMessage("§6Vybrána barva tohoto typu");
                 } else {
-                    p.sendMessage("§7Toto je dostupné pouze pro IronVIP a vyšší");
+                    p.sendMessage("§7Toto je dostupné pouze pro VIP a vyšší");
                     p.closeInventory();
                 }
             }

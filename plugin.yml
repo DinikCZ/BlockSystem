@@ -16,6 +16,8 @@ permissions:
     default: false
 commands:
   announce:
+    description: Speciální broadcast
+    aliases: [shout, bc, broadcast, say]
   cc:
   softrestart:
   inv:
@@ -29,6 +31,4 @@ commands:
   ac:
   spawnboat:
   activatejumpingeffectcommand:
-  afk:
-     description: AFK Příkaz <3
-     aliases: [awayfromkeyboard, chcipryc]
+  event:

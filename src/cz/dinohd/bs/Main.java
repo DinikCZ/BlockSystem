@@ -4,9 +4,11 @@ package cz.dinohd.bs;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -14,6 +16,7 @@ import javax.imageio.ImageIO;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
+import org.bukkit.Sound;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -35,9 +38,9 @@ import cz.dinohd.bs.eventy.EasterEggs;
 import cz.dinohd.bs.eventy.FireworkSpawnEvent;
 import cz.dinohd.bs.eventy.IceBoatSpawn;
 import cz.dinohd.bs.eventy.JoinListener;
-import cz.dinohd.bs.prikazy.AFK;
 import cz.dinohd.bs.prikazy.ActivateJumpingEffect;
 import cz.dinohd.bs.prikazy.AdminChat;
+import cz.dinohd.bs.prikazy.AnnounceCommand;
 import cz.dinohd.bs.prikazy.ClearChatCommand;
 import cz.dinohd.bs.prikazy.DownloadUpdate;
 import cz.dinohd.bs.prikazy.InvCommand;
@@ -62,8 +65,10 @@ public class Main extends JavaPlugin implements Plugin, Listener, PluginMessageL
     Player pl;
 	public static File f;
 	public static File file;
+	public static File ateam;
 	public static YamlConfiguration config;
 	public static YamlConfiguration chatcolorconfig;
+	public static YamlConfiguration ateamfile;
 	
     private ParticlesAPI particlesAPI = new ParticlesAPI();
     private static ArrayList<Player> players = new ArrayList<Player>();
@@ -76,25 +81,48 @@ public void onEnable() {
     instance = this;
     ConsoleCommandSender console = server.getConsoleSender();
     console.sendMessage((Object)ChatColor.AQUA + "[BlockSystem]" + (Object)ChatColor.GRAY + " byl zapnut!");
-    console.sendMessage((Object)ChatColor.YELLOW + "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-    console.sendMessage((Object)ChatColor.GRAY + "");
-    console.sendMessage((Object)ChatColor.GRAY + "            BlockSystem");
-    console.sendMessage((Object)ChatColor.GRAY + "          Vytvoøil _Dinik_");
-    console.sendMessage((Object)ChatColor.GRAY + "             Verze 1.0");
-    console.sendMessage((Object)ChatColor.RED + "             Naèítání...");
-    console.sendMessage((Object)ChatColor.GRAY + "");
-    console.sendMessage((Object)ChatColor.YELLOW + "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-    console.sendMessage((Object)ChatColor.YELLOW + "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-    console.sendMessage((Object)ChatColor.RED + "          Úspìšnì naèteno!");
-    console.sendMessage((Object)ChatColor.YELLOW + "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     this.loadEvents();
     this.loadCommand();
     try {
+    Bukkit.getScheduler().runTaskLaterAsynchronously(this, new Runnable() {
+    @Override
+    public void run() {
 			this.startup();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
 		}
+
+	private void startup() {
+    	try {
+    		List<String> ateam = ateamfile.getStringList("ateam");
+    		Random random = new Random();
+    		int index = random.nextInt(ateam.size());
+		URL url = new URL("http://cravatar.eu/avatar/" + ateam.get(index) + "/500.png");
+        BufferedImage imageToSend;
+			imageToSend = ImageIO.read(url);
+        for (Player pl : Bukkit.getServer().getOnlinePlayers()){
+            new ImageMessage(
+            imageToSend,
+            8,
+            ImageChar.BLOCK.getChar() 
+            ).appendText(
+            "§7§m+-------------------------------------+",
+            "",
+            "",
+            "§b§lSystem §8§l» §eBlockSystem v1.5.1 byl naèten!",
+            "§b§lSystem §8§l» §eI'm different",
+            "",
+            "",
+            "§7§m+-------------------------------------+"
+            ).sendToPlayer(pl);
+    }
+    	} catch (Exception e) {
+    	e.printStackTrace();
+    	}
+		
+	}
+}, 1);
+    } catch (Exception e) {
+    e.printStackTrace();
+    }
 	getDataFolder().mkdirs();
 	f = new File(getDataFolder(), "config.yml");
 	if (!f.exists()) {
@@ -120,6 +148,18 @@ public void onEnable() {
 	}
 
 	chatcolorconfig = YamlConfiguration.loadConfiguration(file);
+	
+	ateam = new File(getDataFolder(), "ateam.yml");
+	if (!ateam.exists()) {
+		try {
+			Files.copy(getResource("ateam.yml"), ateam.toPath());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	ateamfile = YamlConfiguration.loadConfiguration(ateam);
     
     Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");        
     Bukkit.getMessenger().registerIncomingPluginChannel(this, "BungeeCord", this);
@@ -177,9 +217,14 @@ public void onEnable() {
     public void AFKRem(String p) {
         afk.remove(p);
     }
-    public void startup() throws IOException {
-       URL url = new URL("http://cravatar.eu/avatar/" + "5fe7bc6f-6f47-4a4a-bac4-561538f734e5" + "/500.png");
-        BufferedImage imageToSend = ImageIO.read(url);
+/*    public void startup() throws IOException {
+    	try {
+    		List<String> ateam = ateamfile.getStringList("ateam");
+    		Random random = new Random();
+    		int index = random.nextInt(ateam.size());
+		URL url = new URL("http://cravatar.eu/avatar/" + ateam.get(index) + "/500.png");
+        BufferedImage imageToSend;
+			imageToSend = ImageIO.read(url);
         for (Player pl : Bukkit.getServer().getOnlinePlayers()){
             new ImageMessage(
             imageToSend,
@@ -189,14 +234,17 @@ public void onEnable() {
             "§7§m+-------------------------------------+",
             "",
             "",
-            "§b§lSystem §8§l» §eBlockSystem byl naèten!",
-            "§b§lSystem §8§l» §eStill alive",
+            "§b§lSystem §8§l» §eBlockSystem v1.5 byl naèten!",
+            "§b§lSystem §8§l» §eGoodbye Ender Dragon Wings",
             "",
             "",
             "§7§m+-------------------------------------+"
             ).sendToPlayer(pl);
     }
-    }
+    	} catch (Exception e) {
+    	e.printStackTrace();
+    	}
+    }*/
    public void loadCommand() {
 	    this.getCommand("cc").setExecutor(new ClearChatCommand());
 	    this.getCommand("softrestart").setExecutor(new SoftRestartCommand());
@@ -205,14 +253,14 @@ public void onEnable() {
 	    this.getCommand("bsdownload").setExecutor(new DownloadUpdate());
 	    this.getCommand("bsregenerate").setExecutor(new RegenerateConfigCommand());
 	    this.getCommand("ac").setExecutor(new AdminChat());
-	    this.getCommand("announce").setExecutor(new Announcments());
+	    this.getCommand("event").setExecutor(new Announcments());
 	    this.getCommand("inv").setExecutor(new InvCommand());
 	    this.getCommand("inzerat").setExecutor(new InzeratCommand());
 	    this.getCommand("chatcolor").setExecutor(new CMD());
 	    this.getCommand("particles").setExecutor(new Particles_command());
 	    this.getCommand("spawnboat").setExecutor(new IceBoatSpawn());
 	    this.getCommand("activatejumpingeffectcommand").setExecutor(new ActivateJumpingEffect());
-	    this.getCommand("afk").setExecutor(new AFK());
+	    this.getCommand("announce").setExecutor(new AnnounceCommand());
    }
    public void loadEvents() {
 	    getServer().getPluginManager().registerEvents(new ResidenceCreateInfo(this), this);
@@ -228,7 +276,6 @@ public void onEnable() {
 	    getServer().getPluginManager().registerEvents(new IceBoatSpawn(), this);
 	    getServer().getPluginManager().registerEvents(new ActivateJumpingEffect(), this);
 	    getServer().getPluginManager().registerEvents(new CreativeControl(), this);
-	    getServer().getPluginManager().registerEvents(new AFK(), this);
 	    getServer().getPluginManager().registerEvents(new EasterEggs(), this);
    }
 }

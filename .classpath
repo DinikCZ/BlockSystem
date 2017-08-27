@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/Uzivatel/Desktop/minecraft_server.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Uzivatel/Desktop/Tools/minecraft_server.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Uzivatel/Desktop/Všechno/Residence4.5._13.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Uzivatel/Desktop/Vault(1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Uzivatel/Desktop/Tools/Vault(1).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

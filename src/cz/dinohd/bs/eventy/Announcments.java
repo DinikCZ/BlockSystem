@@ -28,8 +28,8 @@ public class Announcments implements Listener, CommandExecutor {
 
             String cs = ChatColor.translateAlternateColorCodes('&', message + "");
             for (Player player : Bukkit.getServer().getOnlinePlayers())
-            	TitleAPI.sendTitle(player, 20, 50, 20, "§eOhlášení", cs);
-Bukkit.broadcastMessage("§eOhlášení §b§l> §f" + cs + "§f - " + p.getName());
+            	TitleAPI.sendTitle(player, 20, 50, 20, "§c§lEvent", cs);
+Bukkit.broadcastMessage("§c§lEvent §8§l> §7" + cs + "§7 - " + p.getName());
 {
 		return true;
 }
